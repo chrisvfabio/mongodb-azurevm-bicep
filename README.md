@@ -15,6 +15,7 @@ az login
 
 
 Deploy the Bicep template to Azure.
+
 ```bash
 az deployment sub create \
     --name mongodb \
@@ -33,6 +34,7 @@ Please provide securestring value for 'adminPasswordOrKey' (? for help): *******
 Verify the deployment, ensuring docker is installed on the Azure VM.
 
 Find the public FQDN or IP address of the Azure VM.
+
 ```bash
 HOSTNAME=$(az vm show --name mongodb-vm-01 --resource-group  mongodb-rg  --show-details --output tsv --query fqdns)
 
@@ -105,7 +107,6 @@ Exit the mongo container shell and virtual machine.
 
 > Ensure your IP Address is added into the Network Security Group (NSG) allow list to access the MongoDB instance.
 
-```bash
 On your local machine, spin up an alpine container.
 
 ```bash
